@@ -1,1 +1,246 @@
 /* app global css */
+
+:root {
+  --bg: #0a0e17;
+  --bg-card: #111827;
+  --bg-elevated: #1a2234;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-dim: #0ea5e9;
+  --border: #1e293b;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 60%, #000 100%);
+  color: var(--text);
+}
+
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero-text {
+  max-width: 34rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.6rem;
+  transition: border-color 0.2s ease;
+}
+
+a.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.experience-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Eğitim & İletişim – iki kart aynı yükseklik (grid) */
+.education-contact-section {
+  margin-bottom: 3rem;
+}
+
+.education-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+  align-items: start;
+}
+
+.education-contact-grid .section-title {
+  margin-bottom: 0.5rem;
+}
+
+.education-contact-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem !important;
+  height: 100%;
+}
+
+.education-contact-cert {
+  grid-column: 1;
+}
+
+@media (max-width: 767px) {
+  .education-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-contact-grid .section-title:first-of-type { order: 0; }
+  .education-contact-grid .education-contact-card:first-of-type { order: 1; }
+  .education-contact-cert { order: 2; }
+  .education-contact-grid .section-title:last-of-type { order: 3; }
+  .education-contact-grid .education-contact-card:last-of-type { order: 4; }
+  .education-contact-grid > div:last-child { order: 5; display: none; }
+}
+
+/* Hero image */
+.hero-image-wrap {
+  width: 260px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+/* Project card */
+.project-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card__content {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Project card image */
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Navbar logo */
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 0% 0%, var(--accent) 0, var(--accent-dim) 40%, #0f172a 100%);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.7),
+    0 0 0 1px rgba(15, 23, 42, 0.9) inset;
+}
+
+.logo-initials {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.logo-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.logo-role {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding-top: 3rem;
+  }
+
+  .hero-image {
+    height: 220px;
+  }
+
+  .project-card__image {
+    max-height: 180px;
+  }
+}
