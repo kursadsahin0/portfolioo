@@ -236,8 +236,23 @@ a.card:hover {
     padding-top: 3rem;
   }
 
+  .hero-section .row {
+    flex-direction: column;
+  }
+
+  .hero-section .hero-image-col {
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-image-wrap {
+    width: 160px;
+    height: 176px;
+    margin: 0 auto;
+  }
+
   .hero-image {
-    height: 220px;
+    height: 176px;
   }
 
   .project-card__image {

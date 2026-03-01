@@ -32,7 +32,7 @@
             />
           </div>
         </div>
-        <div class="col-12 col-md-5 gt-sm">
+        <div class="col-12 col-md-5 hero-image-col">
           <div class="hero-image-wrap">
             <img
               :src="heroImage"
